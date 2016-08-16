@@ -1,8 +1,8 @@
 {
   "name": "cl-edgar",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "cli for managing edgar crons",
-  "main": "./bin/cl-edgar.js",
+  "main": "./cl-edgar.js",
   "bin": "./bin/cl-edgar.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
