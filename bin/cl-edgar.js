@@ -1,9 +1,9 @@
 const program = require('commander');
 const moment = require('moment');
 
-const init = require('./commands/init');
-const hasoffers = require('./commands/hasoffers');
-const facebook = require('./commands/facebook');
+const init = require('./../commands/init');
+const hasoffers = require('./../commands/hasoffers');
+const facebook = require('./../commands/facebook');
 
 program
   .version('0.0.1');
