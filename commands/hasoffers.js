@@ -1,20 +1,40 @@
 const moment = require('moment');
+const defaults = require('./../config/defaults').hasoffers;
 
 function hasoffers(program) {
-    if (program.date) {
-        // validate date format
-        if (program.date !== moment(program.date).format('YYYY-MM-DD')) {
-        return console.log('Must specify date in valid format: YYYY-MM-DD');
-        }
-    } else {
-        program.date = moment().subtract(1, 'days').format('YYYY-MM-DD');
-    }
-    console.log('using date: ' + program.date);
-    if (program.script) {
-        console.log('run hasoffers script: ' + program.script)
-    } else {
-        console.log('run hasoffers, no script specified so default is hourly job whatever');
-    }
+  const params = {
+    date: getDate(program.date),
+    script: getScript(program.script),
+  };
+  console.log('hasoffers with params:');
+  console.dir(params, { depth: null });
+}
+
+function getDate(dateInput) {
+  if (dateInput) {
+    return sanitizeDateInput(dateInput);
+  }
+  return defaults.date;
+}
+
+function getScript(scriptInput) {
+  if (scriptInput) {
+    return sanitizeScriptInput(scriptInput);
+  }
+  return defaults.script;
+}
+
+function sanitizeDateInput(date) {
+  if (date !== moment(date).format('YYYY-MM-DD')) {
+    console.log('Date must be valid and format YYYY-MM-DD');
+    return process.exit(0);
+  }
+  return date;
+}
+
+function sanitizeScriptInput(script) {
+  // if script is valid (whitelisted)
+  return script;
 }
 
 module.exports = hasoffers;

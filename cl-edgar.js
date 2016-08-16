@@ -9,7 +9,7 @@ program
   .version('0.0.1');
 
 program
-  .option('-d --date <date>', 'Specify a date for the script');
+  .option('-d --date <date>', 'Specify a date for the script, format YYYY-MM-DD');
 
 // init
 program
