@@ -1,0 +1,19 @@
+{
+  "name": "cl-edgar",
+  "version": "0.0.0",
+  "description": "cli for managing edgar crons",
+  "main": "cl-edgar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brent Hamilton <bh@strawhouselabs.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "moment": "^2.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "eslint-config-airbnb": "^10.0.1"
+  }
+}
